@@ -17,17 +17,22 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        min-height: 100vh;
         margin: 0;
         transition: opacity 0.5s ease-in-out;
       }
 
       body.fade-out {
         opacity: 0;
+      }
+
+      main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .container {
@@ -142,7 +147,8 @@
         text-shadow: -2px -2px 0 #7b4626, 2px -2px 0 #7b4626, -2px 2px 0 #7b4626,
           2px 2px 0 #7b4626, 0px 2px 0 #7b4626, 2px 0px 0 #7b4626,
           0px -2px 0 #7b4626, -2px 0px 0 #7b4626;
-        margin-top: 30px;
+        text-align: center;
+        padding: 30px;
       }
 
       footer a {
@@ -150,28 +156,12 @@
       }
 
       .dark {
-        font-family: "Dynapuff", sytem-ui;
         background-image: none;
         background-color: #432814;
-        background-size: cover;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
       }
 
       body.dark .container {
         background-color: #896a43;
-        margin: 20px 0;
-        width: fit-content;
-        height: auto;
-        text-align: center;
-        padding: 20px;
-        padding-left: 100px;
-        padding-right: 100px;
-        border-radius: 30px;
       }
 
       .dark h1 {
@@ -180,61 +170,58 @@
           2px 2px 0 #432814, 0px 2px 0 #432814, 2px 0px 0 #432814,
           0px -2px 0 #432814, -2px 0px 0 #432814;
       }
-
-      .logo img dark {
-        width: 500px;
-        height: auto;
-      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div id="logo" class="logo-img">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/762/original/Favourite_Hobby_Being_a_Potato!_%287%29.png?1749567539"
-        />
-      </div>
-      <button id="theme-button" class="theme-button">
-        <img
-          id="theme-image"
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/846/original/Favourite_Hobby_Being_a_Potato!_%2822%29.png?1749629207"
-        />
-      </button>
-      <h1>Potato Modes:</h1>
-      <div class="grid">
-        <img
-          id="mama"
-          src="
+    <main>
+      <div class="container">
+        <div id="logo" class="logo-img">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/762/original/Favourite_Hobby_Being_a_Potato!_%287%29.png?1749567539"
+          />
+        </div>
+        <button id="theme-button" class="theme-button">
+          <img
+            id="theme-image"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/846/original/Favourite_Hobby_Being_a_Potato!_%2822%29.png?1749629207"
+          />
+        </button>
+        <h1>Potato Modes:</h1>
+        <div class="grid">
+          <img
+            id="mama"
+            src="
           https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/761/original/Favourite_Hobby_Being_a_Potato!_%282%29.png?1749565704"
-          class="img-mama"
-        />
-        <img
-          id="gamer"
-          src="
+            class="img-mama"
+          />
+          <img
+            id="gamer"
+            src="
           https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/760/original/Favourite_Hobby_Being_a_Potato!_%283%29.png?1749565698"
-          class="img-gamer"
-        />
-        <img
-          id="nater"
-          src="    
+            class="img-gamer"
+          />
+          <img
+            id="nater"
+            src="    
           https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/759/original/Favourite_Hobby_Being_a_Potato!_%285%29.png?1749565691"
-          class="img-nater"
-        />
-        <img
-          id="triggered"
-          src="
+            class="img-nater"
+          />
+          <img
+            id="triggered"
+            src="
           https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/758/original/Favourite_Hobby_Being_a_Potato!_%286%29.png?1749565686"
-          class="img-triggered"
-        />
+            class="img-triggered"
+          />
+        </div>
+        <button id="potato-button" class="potato-button">
+          <a
+            href="https://beanandjelly.my.canva.site/science-potato"
+            target="_blank"
+            >Become a Potato</a
+          >
+        </button>
       </div>
-      <button id="potato-button" class="potato-button">
-        <a
-          href="https://beanandjelly.my.canva.site/science-potato"
-          target="_blank"
-          >Become a Potato</a
-        >
-      </button>
-    </div>
+    </main>
     <footer>
       Coded by
       <a href="https://github.com/AbigailLeighStoffberg" target="_blank">
@@ -242,46 +229,43 @@
       >
     </footer>
     <script>
+      const themeButton = document.querySelector(".theme-button");
+      const potatoButton = document.querySelector("#potato-button");
+      const logoImage = document.querySelector("#logo img");
+      const themeImage = document.querySelector("#theme-image");
+      const mamaPotato = document.querySelector("#mama");
+      const gamerPotato = document.querySelector("#gamer");
+      const naterPotato = document.querySelector("#nater");
+      const triggeredPotato = document.querySelector("#triggered");
+
+      const lightLogoURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/762/original/Favourite_Hobby_Being_a_Potato!_%287%29.png?1749567539";
+      const lightThemeImageURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/846/original/Favourite_Hobby_Being_a_Potato!_%2822%29.png?1749629207";
+      const lightMamaURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/761/original/Favourite_Hobby_Being_a_Potato!_%282%29.png?1749565704";
+      const lightGamerURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/760/original/Favourite_Hobby_Being_a_Potato!_%283%29.png?1749565698";
+      const lightNaterURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/759/original/Favourite_Hobby_Being_a_Potato!_%285%29.png?1749565691";
+      const lightTriggeredURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/758/original/Favourite_Hobby_Being_a_Potato!_%286%29.png?1749565686";
+
+      const darkLogoURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/849/original/Favourite_Hobby_Being_a_Potato!_%2824%29.png?1749630839";
+      const darkThemeImageURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/845/original/Favourite_Hobby_Being_a_Potato!_%2823%29.png?1749629201";
+      const darkMamaURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/860/original/Favourite_Hobby_Being_a_Potato!_%2829%29.png?1749631949";
+      const darkGamerURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/859/original/Favourite_Hobby_Being_a_Potato!_%2830%29.png?1749631945";
+      const darkNaterURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/858/original/Favourite_Hobby_Being_a_Potato!_%2831%29.png?1749631940";
+      const darkTriggeredURL =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/857/original/Favourite_Hobby_Being_a_Potato!_%2832%29.png?1749631935";
+
       function changeTheme() {
-        // light mode
-
-        const lightLogoURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/762/original/Favourite_Hobby_Being_a_Potato!_%287%29.png?1749567539";
-        const lightThemeImageURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/846/original/Favourite_Hobby_Being_a_Potato!_%2822%29.png?1749629207";
-        const lightMamaURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/761/original/Favourite_Hobby_Being_a_Potato!_%282%29.png?1749565704";
-        const lightGamerURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/760/original/Favourite_Hobby_Being_a_Potato!_%283%29.png?1749565698";
-        const lightNaterURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/759/original/Favourite_Hobby_Being_a_Potato!_%285%29.png?1749565691";
-        const lightTriggeredURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/758/original/Favourite_Hobby_Being_a_Potato!_%286%29.png?1749565686";
-
-        // dark mode
-
-        const darkLogoURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/849/original/Favourite_Hobby_Being_a_Potato!_%2824%29.png?1749630839";
-        const darkThemeImageURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/845/original/Favourite_Hobby_Being_a_Potato!_%2823%29.png?1749629201";
-        const darkMamaURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/860/original/Favourite_Hobby_Being_a_Potato!_%2829%29.png?1749631949";
-        const darkGamerURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/859/original/Favourite_Hobby_Being_a_Potato!_%2830%29.png?1749631945";
-        const darkNaterURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/858/original/Favourite_Hobby_Being_a_Potato!_%2831%29.png?1749631940";
-        const darkTriggeredURL =
-          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/857/original/Favourite_Hobby_Being_a_Potato!_%2832%29.png?1749631935";
-
-        let body = document.querySelector("body");
-
-        let logoImage = document.querySelector("#logo img");
-        let themeImage = document.querySelector("#theme-image");
-        let mamaPotato = document.querySelector("#mama");
-        let gamerPotato = document.querySelector("#gamer");
-        let naterPotato = document.querySelector("#nater");
-        let triggeredPotato = document.querySelector("#triggered");
-
+        const body = document.body;
         body.classList.toggle("dark");
 
         if (body.classList.contains("dark")) {
@@ -301,22 +285,23 @@
         }
       }
 
-      let themeButton = document.querySelector(".theme-button");
-      themeButton.addEventListener("click", changeTheme);
-
-      const potatoButton = document.querySelector("#potato-button");
-
-      potatoButton.addEventListener("click", function (event) {
+      function transitionToPage(event) {
         event.preventDefault();
-
         const destinationURL = potatoButton.querySelector("a").href;
 
         document.body.classList.add("fade-out");
 
         setTimeout(function () {
-          window.location.href = destinationURL;
+          window.open(destinationURL, "_blank");
+
+          setTimeout(function () {
+            document.body.classList.remove("fade-out");
+          }, 100);
         }, 500);
-      });
+      }
+
+      themeButton.addEventListener("click", changeTheme);
+      potatoButton.addEventListener("click", transitionToPage);
     </script>
   </body>
 </html>
